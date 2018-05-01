@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: da8596302fa294845b55274b45bc8b95
+timeCreated: 1516800040
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Times New Roman
+  fontNames:
+  - Times New Roman
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 72bead15287b1d3469109612455266e5, type: 3}
+  - {fileID: 12800000, guid: 07e510180ffd75949ab4165bdfcb51fd, type: 3}
+  - {fileID: 12800000, guid: 47e595d8698d27742bf727021c4b06d2, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

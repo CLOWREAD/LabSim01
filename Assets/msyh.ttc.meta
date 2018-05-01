@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: f955d77ff8c071e4cad8ea3fc92ccb4c
+timeCreated: 1516866428
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Microsoft YaHei
+  fontNames:
+  - Microsoft YaHei
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d0e18ca31b6536644beb8b2405bb5baf, type: 3}
+  - {fileID: 12800000, guid: 5d001fa51f5140d469ac6efcaad7315d, type: 3}
+  - {fileID: 12800000, guid: 524087c52967f434291f342def576524, type: 3}
+  - {fileID: 12800000, guid: 857ef67850c7a294faf379291b239078, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

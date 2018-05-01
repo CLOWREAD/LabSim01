@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SelectExpType.unity
+    guid: b6c1e0232b0bf7e4bac1e9b7101415ce
+  - enabled: 1
+    path: Assets/MainScene.unity
+    guid: 57cc6b19d7e5d064c83b0417e847d5ae
+  - enabled: 1
+    path: Assets/DataPanel.unity
+    guid: d99d38cea2b082d428d4552d8fca97cf
+  - enabled: 1
+    path: Assets/ExpReport.unity
+    guid: 3f5d575b5a0c1ac4c8176aa8f4f7286f
+  - enabled: 1
+    path: Assets/ExpRecord.unity
+    guid: 46948c420fbe7a746a7a7a6c969f3dcd
