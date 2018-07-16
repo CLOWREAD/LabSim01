@@ -22,5 +22,9 @@ public class SelectExperiment : MonoBehaviour {
         sg.m_OpRecord.Add("进入主界面,实验类型代号:"+Type);
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
-
+    public void OnExit()
+    {
+        Application.Quit();
+        Debug.Log("#Hayasumi");
+    }
 }

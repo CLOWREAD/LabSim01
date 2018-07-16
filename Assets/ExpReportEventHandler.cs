@@ -20,7 +20,7 @@ public class ExpReportEventHandler : MonoBehaviour {
     }
     public void OnSubmit()
     {
-        for(int i=0;i<6;i++)
+        for(int i=0;i<8;i++)
         {
             GameObject go = GameObject.Find("InputField0" + (i + 1));
             Text t = go.GetComponentInChildren<Text>();
@@ -70,7 +70,7 @@ public class ExpReportEventHandler : MonoBehaviour {
     float GetLEDValue(int i, float p, int type)
     {
         int M1 = type / 3, M2 = type % 3;//////
-        float[] Yi = { -0.013f, -0.007f, 0.007f, -0.007f, 0.007f, 0.013f };
+        float[] Yi = { -0.013f, -0.007f,0, 0.007f, -0.007f, 0,0.007f, 0.013f };
         float[] E = { 203, 104, 75 };
         float[] mu = { 0.26f, 0.4f, 0.31f };
         float l = 0.200f;////////
@@ -83,7 +83,7 @@ public class ExpReportEventHandler : MonoBehaviour {
         epsilon *= 1;
 
 
-        if (i <= 2)
+        if (i <= 3)
         {
             return (epsilon * E[M1]);
         }
@@ -96,7 +96,7 @@ public class ExpReportEventHandler : MonoBehaviour {
     float GetMuValue(int i, float p, int type)
     {
         int M1 = type / 3, M2 = type % 3;//////
-        float[] Yi = { -0.013f, -0.007f, 0.007f, -0.007f, 0.007f, 0.013f };
+        float[] Yi = { -0.013f, -0.007f,0, 0.007f, -0.007f,0, 0.007f, 0.013f };
         float[] E = { 203, 104, 75 };
         float[] mu = { 0.26f, 0.4f, 0.31f };
         float l = 0.200f;////////

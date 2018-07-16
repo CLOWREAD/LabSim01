@@ -37,6 +37,9 @@ public class CameraMovement : MonoBehaviour {
 	}
     void FixedUpdate()
     {
+
+        CameraGlobal cg = CameraGlobal.Instance;
+
         SystemGlobal sg = SystemGlobal.Instance;
         if (sg.m_FrozeCamera == true) return;
         if (!sg.m_Enable3DInput) return;
@@ -59,10 +62,10 @@ public class CameraMovement : MonoBehaviour {
 
 
             Quaternion q = Quaternion.Euler(0, m_Rotation, 0);
-            Vector3 offset = q * Vector3.forward*12.0f;
+            Vector3 offset = q * Vector3.forward* cg.m_CameraDist;
             offset += target.position;
             offset *= Mathf.Cos(m_CameraHeight / 256.0f);
-            offset.y = 12.0f*Mathf.Sin(m_CameraHeight/256.0f);
+            offset.y = cg.m_CameraDist * Mathf.Sin(m_CameraHeight/256.0f);
 
             this.transform.position = offset;
             this.transform.LookAt(target);

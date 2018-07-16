@@ -16,10 +16,7 @@ public class DataPanelUpdate : MonoBehaviour {
     private bool m_OldFastenStatus;
 	void Start () {
         m_OldFastenStatus = FastenCorrectly();
-        //m_Fastener_C = new Sprite();
-        //m_Fastener_NC = new Sprite();
-        //m_Fastener_C=Resources.Load("\\Assets\\PanelPic\\Dot_C", typeof(Sprite)) as Sprite;
-        //m_Fastener_NC= Resources.Load("Dot_NC", typeof(Sprite)) as Sprite;
+
     }
 	
 	// Update is called once per frame
@@ -47,9 +44,10 @@ public class DataPanelUpdate : MonoBehaviour {
     void UpdateStatusBar()
     {
         SystemGlobal sg = SystemGlobal.Instance;
-       
+
+        PlugFastenGlobal pfg = PlugFastenGlobal.Instance;
         
-        bool nf = FastenCorrectly();
+        bool nf = pfg.m_PlugCorrect;
         if(nf!=m_OldFastenStatus)
         {
             if (nf)
@@ -73,27 +71,37 @@ public class DataPanelUpdate : MonoBehaviour {
     }
     void UpdateFastener()
     {
-        for (int i = 0; i < 14; i++)
+
+        PlugFastenGlobal pfg = PlugFastenGlobal.Instance;
+
+
+        for (int i = 0; i < 36; i++)
         {
             string str = i.ToString().PadLeft(2, '0');
             str = "Fastener" + str;
             Image go = GameObject.Find(str).GetComponent<Image>();
 
-            SystemGlobal sg = SystemGlobal.Instance;
+            go.sprite = m_Fastener_NC;
 
-            int index = i / 2;
-            index *= 2;
-            if (sg.m_DataPanelPlugPos.Fastener[index] == i || sg.m_DataPanelPlugPos.Fastener[index + 1] == i)
-            {
-
-                go.sprite = m_Fastener_C;
-            }
-            else
-            {
-                go.sprite = m_Fastener_NC;
-            }
         }
+
+        for (int i=0;i<pfg.m_PlugStatus.Length;i++)
+        {
+            if(pfg.m_PlugStatus[i]==-1)
+            {
+                continue;
+            }
+            string str = pfg.m_PlugStatus[i].ToString().PadLeft(2, '0');
+            str = "Fastener" + str;
+        
+            Image go = GameObject.Find(str).GetComponent<Image>();
+            go.sprite = m_Fastener_C;
+        }
+
     }
+
+    
+
     void UpDateLED(int i)
     {
         SystemGlobal sg = SystemGlobal.Instance;
@@ -101,23 +109,21 @@ public class DataPanelUpdate : MonoBehaviour {
         int port = 0;
         port = 6 * sg.m_DataPanelPage + i;
 
-        int index = PortRemap( port) ;
+        PlugFastenGlobal pfg = PlugFastenGlobal.Instance;
 
+        int plugnum = -1;
 
-        index *= 2;
-        bool con = false;
-        if (index < 12 && index >= 0)
+        for(int pn=0;pn< pfg.m_PlugFastenNum.Length;pn++)
         {
-            if (sg.m_DataPanelPlugPos.Fastener[index] == index && sg.m_DataPanelPlugPos.Fastener[index + 1] == index + 1)
+            if(pfg.m_PlugFastenNum[pn]==port)
             {
-                con = true;
+                plugnum = pn;
+                break;
             }
-            if (sg.m_DataPanelPlugPos.Fastener[index] == index + 1 && sg.m_DataPanelPlugPos.Fastener[index + 1] == index)
-            {
-                con = true;
-            }
-
         }
+
+       
+
         string str = (i+1).ToString().PadLeft(2, '0');
         str = "LED" + str;
         GameObject go = GameObject.Find(str);
@@ -127,9 +133,10 @@ public class DataPanelUpdate : MonoBehaviour {
         {
             Text tx = go.GetComponent<Text>();
         
-            if (con)
+            if (plugnum!=-1)
             {
-                tx.text = GetLEDValue(PortRemap(port), sg.m_ForceValue, sg.m_Type).ToString("F2") ;
+                tx.text = GetLEDValue(plugnum, sg.m_ForceValue, sg.m_Type).ToString("F2") ;
+                //tx.text = GetLEDValue(PortRemap(port), sg.m_ForceValue, sg.m_Type).ToString("F2");
             }
             else
             {
@@ -164,7 +171,7 @@ public class DataPanelUpdate : MonoBehaviour {
         if (i == -1) return 0;
 
         int M1 = type/3, M2 = type%3;//////
-        float[] Yi = { -0.013f, -0.007f, 0.007f, -0.007f, 0.007f, 0.0013f };
+        float[] Yi = { -0.013f, -0.007f, 0,0.007f, -0.007f, 0,0.007f, 0.013f };
         float[] E = { 203, 104, 75 };
         float[] mu = { 0.26f, 0.4f, 0.31f };
         float l = 0.200f;////////
@@ -177,7 +184,7 @@ public class DataPanelUpdate : MonoBehaviour {
         epsilon *= 1;
 
        
-        if (i <= 2)
+        if (i <= 3)
         {
             return (epsilon * E[M1]);
         }
@@ -210,26 +217,9 @@ public class DataPanelUpdate : MonoBehaviour {
     }
     bool FastenCorrectly()
     {
-        for (int i = 0; i < 7; i++)
-        {
-            SystemGlobal sg = SystemGlobal.Instance;
-            int index = i;
-            index *= 2;
-            bool con = false;
-            if (sg.m_DataPanelPlugPos.Fastener[index] == index && sg.m_DataPanelPlugPos.Fastener[index + 1] == index + 1)
-            {
-                con = true;
-            }
-            if (sg.m_DataPanelPlugPos.Fastener[index] == index + 1 && sg.m_DataPanelPlugPos.Fastener[index + 1] == index)
-            {
-                con = true;
-            }
-            if(con==false)
-            {
-                return false;
-            }
-        }
-        return true;
+        PlugFastenGlobal pfg = PlugFastenGlobal.Instance;
+        pfg.m_PlugCorrect = pfg.CheckPlug();
+        return pfg.m_PlugCorrect;
     }
 
     public void UpdateInfoPanel()

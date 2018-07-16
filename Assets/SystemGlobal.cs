@@ -19,10 +19,10 @@ public class SystemGlobal
 
         public int[] Fastener;
     };
-    public DataPanelPlugPos m_DataPanelPlugPos;
+    public DataPanelPlugPos m_DataPanelPlugPos;//面板上插头的位置
     public bool m_DataPanelOn=false;
-    public int m_DataPanelPage = 0;
-    public float m_ForceValue;
+    public int m_DataPanelPage = 0;//当前选择的显示页面
+    public float m_ForceValue;//测力值
     public List<String> m_OpRecord;
     public bool m_DataPanelShowInfo=true;
     public bool m_MainShowInfo = true;
@@ -48,16 +48,17 @@ public class SystemGlobal
 
     static private void Init(SystemGlobal sg)
     {
-        sg.m_DataPanelPlugPos.Count = 16;
-        sg.m_DataPanelPlugPos.Initated = new bool[16];
-        sg.m_DataPanelPlugPos.Fastener = new int[16];
-        for(int i=0;i<16;i++)
+        int fcount = 24;
+        sg.m_DataPanelPlugPos.Count = fcount;
+        sg.m_DataPanelPlugPos.Initated = new bool[fcount];
+        sg.m_DataPanelPlugPos.Fastener = new int[fcount];
+        for(int i=0;i< fcount; i++)
         {
             sg.m_DataPanelPlugPos.Initated[i] = false;
             sg.m_DataPanelPlugPos.Fastener[i] = 0;
         }
-        sg.m_DataPanelPlugPos.m_OriginalPos = new Vector2[16];
-        sg.m_DataPanelPlugPos.m_Offset = new Vector2[16];
+        sg.m_DataPanelPlugPos.m_OriginalPos = new Vector2[fcount];
+        sg.m_DataPanelPlugPos.m_Offset = new Vector2[fcount];
 
         sg.m_OpRecord = new List<string>();
 

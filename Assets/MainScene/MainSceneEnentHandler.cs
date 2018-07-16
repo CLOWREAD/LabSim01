@@ -67,4 +67,10 @@ public class MainSceneEnentHandler : MonoBehaviour {
        
 
     }
+    public void OnCameraButton(float delta)
+    {
+        CameraGlobal cg = CameraGlobal.Instance;
+        cg.m_CameraDist += delta;
+        cg.m_CameraDist = Mathf.Clamp(cg.m_CameraDist, 4.0f, 18.0f);
+    }
 }
