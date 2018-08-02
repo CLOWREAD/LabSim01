@@ -77,11 +77,11 @@
     <None Include="Assets\Mirror Shaders\Mirror-AlphaSpecSphere.shader" />
     <None Include="Assets\Mirror Shaders\Mirror-BumpSpec.shader" />
     <None Include="Assets\Mirror Shaders\Mirror-AlphaBumpSpec.shader" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/clow_/Desktop/LabSim/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/clow_/Desktop/LabSim/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/clow_/Documents/LabSimUnity20180716/LabSim/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/clow_/Documents/LabSimUnity20180716/LabSim/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

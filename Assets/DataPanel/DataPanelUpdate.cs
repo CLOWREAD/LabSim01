@@ -135,7 +135,7 @@ public class DataPanelUpdate : MonoBehaviour {
         
             if (plugnum!=-1)
             {
-                tx.text = GetLEDValue(plugnum, sg.m_ForceValue, sg.m_Type).ToString("F2") ;
+                tx.text = GetLEDValue(plugnum, sg.m_ForceValue, sg.m_Type).ToString("F0") ;
                 //tx.text = GetLEDValue(PortRemap(port), sg.m_ForceValue, sg.m_Type).ToString("F2");
             }
             else
@@ -181,16 +181,16 @@ public class DataPanelUpdate : MonoBehaviour {
         float epsilon = (m * Yi[i]) / (lz * (E[M1] + E[M2]));
         epsilon /= 1000;
         epsilon /= 1000;
-        epsilon *= 1;
+        epsilon *= 1000;
 
        
         if (i <= 3)
         {
-            return (epsilon * E[M1]);
+            return (epsilon );
         }
         else
         {
-            return (epsilon * E[M2]);
+            return (epsilon );
         }
 
     }
