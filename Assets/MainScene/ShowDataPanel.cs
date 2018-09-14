@@ -47,7 +47,10 @@ public class ShowDataPanel : MonoBehaviour {
         if (m_Capture == true)
         {
             sg.m_OpRecord.Add("进入面板界面 测力="+sg.m_ForceValue);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("DataPanel");
+
+            SceneTransition st = SceneTransition.Instance;
+            st.TransTo("DataPanel");
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("DataPanel");
             
         }
 

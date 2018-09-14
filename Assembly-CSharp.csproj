@@ -72,8 +72,11 @@
     <Compile Include="Assets\MainScene\MainSceneEnentHandler.cs" />
     <Compile Include="Assets\MainScene\ShowDataPanel.cs" />
     <Compile Include="Assets\Mirror Shaders\Mirror.cs" />
-    <Compile Include="Assets\SelectExperiment.cs" />
+    <Compile Include="Assets\SceneTransition.cs" />
+    <Compile Include="Assets\SelectExpType\SelectExperiment.cs" />
+    <Compile Include="Assets\SelectExpType\TitleTimer.cs" />
     <Compile Include="Assets\SystemGlobal.cs" />
+    <Compile Include="Assets\TransitionScene\TransitionSceneTimer.cs" />
     <None Include="Assets\Mirror Shaders\Mirror-AlphaSpecSphere.shader" />
     <None Include="Assets\Mirror Shaders\Mirror-BumpSpec.shader" />
     <None Include="Assets\Mirror Shaders\Mirror-AlphaBumpSpec.shader" />

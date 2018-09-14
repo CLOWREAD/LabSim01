@@ -20,6 +20,8 @@ public class ExpReportEventHandler : MonoBehaviour {
     }
     public void OnSubmit()
     {
+        int score = 0;
+
         for(int i=0;i<8;i++)
         {
             GameObject go = GameObject.Find("InputField0" + (i + 1));
@@ -38,6 +40,7 @@ public class ExpReportEventHandler : MonoBehaviour {
                 else
                 {
                     t.color = Color.green;
+                    score++;
                 }
             infield.text = va.ToString("F2");
             
@@ -58,6 +61,7 @@ public class ExpReportEventHandler : MonoBehaviour {
                 else
                 {
                     t.color = Color.green;
+                    score++;
                 }
             infield.text = va.ToString("F2");
            
@@ -65,6 +69,28 @@ public class ExpReportEventHandler : MonoBehaviour {
 
 
         }
+        Record(score);
+    }
+
+    private void Record(int score)
+    {
+        SystemGlobal sg = SystemGlobal.Instance;
+
+        System.DateTime Time = System.DateTime.Now;
+        sg.m_SubmitDateTime = Time;
+        sg.m_OpRecord.Add("\t" + Time.ToLongDateString() + "/" + Time.ToLongTimeString() + "\t 提交数据"+"数据得分:"+score);
+        PlugFastenGlobal pg = PlugFastenGlobal.Instance;
+
+        System.TimeSpan span = new System.TimeSpan();
+        span =  sg.m_SubmitDateTime- sg.m_StartDateTime ;
+
+        sg.m_OpRecord.Add("\t" + Time.ToLongDateString() + "/" + Time.ToLongTimeString() + "\t 提交数据" + "用时:" + span.TotalMinutes+"分钟");
+       
+        if (pg.m_PlugCorrect)
+        {
+
+        }
+
     }
 
     float GetLEDValue(int i, float p, int type)

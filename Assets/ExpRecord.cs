@@ -38,9 +38,9 @@ public class ExpRecord : MonoBehaviour {
         go.transform.SetParent(m_Content.transform);
         RectTransform rt= go.GetComponent<RectTransform>();
         //go.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 100);
-        rt.offsetMax = new Vector2(100,Index* 25+20);
-        rt.offsetMin = new Vector2(-100, Index * 25-20);
-        rt.anchoredPosition = new Vector2(0, (1+Index- (Len/2)) * -25);
+        rt.offsetMax = new Vector2(150,Index* 32+32);
+        rt.offsetMin = new Vector2(-150, Index * 32-32);
+        rt.anchoredPosition = new Vector2(0, (1+Index- (Len/2)) * -45);
         Index++;
     }
 

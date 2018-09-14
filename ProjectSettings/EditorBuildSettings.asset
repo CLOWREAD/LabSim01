@@ -20,3 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ExpRecord.unity
     guid: 46948c420fbe7a746a7a7a6c969f3dcd
+  - enabled: 1
+    path: Assets/TransitionScene.unity
+    guid: dff6143e98088284b8b2e60ae7aad5a5
+  m_configObjects: {}

@@ -16,7 +16,9 @@ public class DataPanelEventHandler : MonoBehaviour {
 	}
     public void OnBackButtonDown()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        SceneTransition st = SceneTransition.Instance;
+        st.TransTo("MainScene");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
     }
     public void OnPowerSwitchDown()
     {

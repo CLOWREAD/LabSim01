@@ -15,10 +15,14 @@ public class MainSceneEnentHandler : MonoBehaviour {
 	void Start () {
         SystemGlobal sg = SystemGlobal.Instance;
         sg.m_Enable3DInput = false;
+
+
+
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         if (m_InfoButton != null)
         {
@@ -42,19 +46,29 @@ public class MainSceneEnentHandler : MonoBehaviour {
     public void OnExpReportButtonDown()
     {
         SystemGlobal sg = SystemGlobal.Instance;
-        sg.m_OpRecord.Add("进入实验报告界面");
+
+        System.DateTime Time = System.DateTime.Now;
+        sg.m_OpRecord.Add("\t" + Time.ToLongDateString() + "/" + Time.ToLongTimeString() + "\t 进入实验报告界面");
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("ExpReport");
     }
     public void OnExpRecordButtonDown()
     {
         SystemGlobal sg = SystemGlobal.Instance;
-        sg.m_OpRecord.Add("进入实验记录界面");
+
+        System.DateTime Time = System.DateTime.Now;
+        sg.m_OpRecord.Add("\t" + Time.ToLongDateString() + "/" + Time.ToLongTimeString() + "\t 进入实验记录界面");
+        
         UnityEngine.SceneManagement.SceneManager.LoadScene("ExpRecord");
     }
     public void OnReturnButtonDown()
     {
         SystemGlobal sg = SystemGlobal.Instance;
-        sg.m_OpRecord.Add("进入初始界面");
+
+        System.DateTime Time = System.DateTime.Now;
+        sg.m_OpRecord.Add("\t" + Time.ToLongDateString() + "/" + Time.ToLongTimeString() + "\t 进入初始界面");
+
+       
         UnityEngine.SceneManagement.SceneManager.LoadScene("SelectExpType");
     }
     public void OnIntrButtonDown()

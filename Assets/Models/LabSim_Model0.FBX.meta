@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 788d8e15ff7ef474d8f9cf229ce4fb2a
-timeCreated: 1516453724
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -22,6 +20,7 @@ ModelImporter:
     100028: "\u7EC4001"
     100030: Box009
     100032: Box010
+    100034: "\u5BF9\u8C61001"
     400000: Box001
     400002: Box003
     400004: Box004
@@ -39,6 +38,7 @@ ModelImporter:
     400028: "\u7EC4001"
     400030: Box009
     400032: Box010
+    400034: "\u5BF9\u8C61001"
     2100000: 'Material #2'
     2100002: 'Material #3'
     2100004: 'Material #4'
@@ -58,6 +58,7 @@ ModelImporter:
     2300024: Torus004
     2300026: Box009
     2300028: Box010
+    2300030: "\u5BF9\u8C61001"
     3300000: Box001
     3300002: Box003
     3300004: Box004
@@ -73,6 +74,7 @@ ModelImporter:
     3300024: Torus004
     3300026: Box009
     3300028: Box010
+    3300030: "\u5BF9\u8C61001"
     4300000: Box001
     4300002: Cylinder001
     4300004: Box003
@@ -88,6 +90,7 @@ ModelImporter:
     4300024: Box008
     4300026: Box009
     4300028: Box010
+    4300030: "\u5BF9\u8C61001"
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -109,6 +112,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
