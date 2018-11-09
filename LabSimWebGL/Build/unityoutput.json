@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "LabSim",
+"dataUrl": "unityoutput.data.unityweb",
+"asmCodeUrl": "unityoutput.asm.code.unityweb",
+"asmMemoryUrl": "unityoutput.asm.memory.unityweb",
+"asmFrameworkUrl": "unityoutput.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
